@@ -1,7 +1,7 @@
 package com.alunoonline.api.controller;
+//Pacote CONTROLLER é o orquestrador. Recebe chamadas e retorna dados.
 
 import com.alunoonline.api.model.Aluno;
-import com.alunoonline.api.repository.AlunoRepository;
 import com.alunoonline.api.service.AlunoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

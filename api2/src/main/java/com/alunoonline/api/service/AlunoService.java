@@ -1,4 +1,8 @@
 package com.alunoonline.api.service;
+/* Pacote SERVICES: separar as regras de negócio, regras da aplicação
+e regras de aplicação para que possam ser testadas e reutilizadas
+por outras partes.
+ */
 
 import com.alunoonline.api.model.Aluno;
 import com.alunoonline.api.repository.AlunoRepository;

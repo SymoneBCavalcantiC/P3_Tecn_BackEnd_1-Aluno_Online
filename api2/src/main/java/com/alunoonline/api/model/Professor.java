@@ -1,5 +1,4 @@
 package com.alunoonline.api.model;
-//Pacote MODEL é responsável pelas classes de entidade, conexão com BD
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,17 +8,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity //informa ao Spring que essa classe representa uma entidade
-@Data //insere os getters and setters
-@AllArgsConstructor //insere um construtor com todos os parâmetros
-@NoArgsConstructor //insere um construtor vazio
-public class Aluno {
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Entity
+public class Professor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
     private String email;
-    private String curso;
-
 }
