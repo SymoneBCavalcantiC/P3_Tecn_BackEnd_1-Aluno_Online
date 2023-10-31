@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity //informa ao Spring que essa classe representa uma entidade
+@Entity //informa ao Spring que essa classe representa uma entidade. Cria uma tabela no banco de dados.
 @Data //insere os getters and setters
 @AllArgsConstructor //insere um construtor com todos os parâmetros
 @NoArgsConstructor //insere um construtor vazio

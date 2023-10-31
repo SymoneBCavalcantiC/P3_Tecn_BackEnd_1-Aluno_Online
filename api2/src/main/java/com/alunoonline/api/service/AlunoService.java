@@ -22,7 +22,6 @@ public class AlunoService {
     }
     public List<Aluno> findAll(){
         return repository.findAll();
-
     }
 
     public Optional<Aluno> findById(Long id){
