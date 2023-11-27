@@ -1,5 +1,5 @@
 package com.alunoonline.api.controller;
-//Pacote CONTROLLER é o orquestrador. Recebe chamadas e retorna dados.
+//Pacote CONTROLLER é o orquestrador. Recebe as chamadas do usuário e retorna-lhe dados.
 
 import com.alunoonline.api.model.Aluno;
 import com.alunoonline.api.service.AlunoService;
@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@RestController
-@RequestMapping("/aluno")
+@RestController //é uma controller do sistema a partir das requisições REST
+@RequestMapping("/aluno") //mapeamento da URL da requisição HTTP
 public class AlunoController {
 
-    @Autowired
+    @Autowired //informa ao framework a injeção da dependência service em controller
     AlunoService service;
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping //responsável por um POST request
+    @ResponseStatus(HttpStatus.CREATED) //código HTTP de retorno da requisição
     public ResponseEntity<Aluno> create(@RequestBody Aluno aluno){
         Aluno alunoCreated = service.create(aluno);
 

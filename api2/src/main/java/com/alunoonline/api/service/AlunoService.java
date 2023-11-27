@@ -11,13 +11,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Service //informa ao framework que esta é a classe de serviço
 public class AlunoService {
 
-    @Autowired
+    @Autowired //informa ao spring a injeção da dependência repository em service
     AlunoRepository repository;
     public Aluno create(Aluno aluno){
-        return repository.save(aluno);
+        return repository.save(aluno); //retorna o aluno criado
 
     }
     public List<Aluno> findAll(){

@@ -21,9 +21,9 @@ public class ProfessorController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Professor> create(@RequestBody Professor professor){
-        Professor professorCreted = service.create(professor);
+        Professor professorCreated = service.create(professor);
 
-        return ResponseEntity.status(201).body(professorCreted);
+        return ResponseEntity.status(201).body(professorCreated);
     }
     @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
