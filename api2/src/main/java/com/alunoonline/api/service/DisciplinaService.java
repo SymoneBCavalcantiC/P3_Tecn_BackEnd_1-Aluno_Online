@@ -1,5 +1,6 @@
 package com.alunoonline.api.service;
 
+import com.alunoonline.api.model.Aluno;
 import com.alunoonline.api.model.Disciplina;
 import com.alunoonline.api.repository.DisciplinaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,10 @@ public class DisciplinaService {
 
     public Disciplina create(Disciplina disciplina){
         return repository.save(disciplina);
+    }
+
+    public List<Disciplina> findAll(){
+        return repository.findAll();
     }
 
     public List<Disciplina> findByProfessorId(Long professorId){

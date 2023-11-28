@@ -1,5 +1,6 @@
 package com.alunoonline.api.controller;
 
+import com.alunoonline.api.model.Aluno;
 import com.alunoonline.api.model.Disciplina;
 import com.alunoonline.api.service.DisciplinaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,12 @@ public class DisciplinaController {
         Disciplina disciplinaCreated = service.create(disciplina);
 
         return ResponseEntity.status(201).body(disciplinaCreated);
+    }
+
+    @GetMapping("/all")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Disciplina> findAll(){
+        return service.findAll();
     }
 
     @GetMapping("/professor/{professorId}")
