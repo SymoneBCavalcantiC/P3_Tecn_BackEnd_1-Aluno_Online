@@ -35,4 +35,10 @@ public class DisciplinaController {
     public List<Disciplina> findByProfessorId(@PathVariable Long professorId){
         return service.findByProfessorId(professorId);
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Long id){
+        service.delete(id);
+    }
 }

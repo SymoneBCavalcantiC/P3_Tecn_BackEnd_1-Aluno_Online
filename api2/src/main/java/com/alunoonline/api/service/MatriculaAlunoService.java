@@ -34,13 +34,16 @@ public class MatriculaAlunoService {
         return repository.findAll();
     }
 
+
     public Optional<MatriculaAluno> findById(Long id){
         return repository.findById(id);
     }
 
+
     public void delete(Long id){
         repository.deleteById(id);
     }
+
 
     public void patchNotas(Long id, PatchNotasRequest patchNotasRequest) {
         Optional<MatriculaAluno> matriculaAluno = repository.findById(id);
@@ -70,6 +73,7 @@ public class MatriculaAlunoService {
         repository.save(matriculaUpdated);
     }
 
+
     private void calcularMediaEAtualizarStatus(MatriculaAluno matricula) {
         if (matricula.getNota1() != null && matricula.getNota2() != null) {
             double media = (matricula.getNota1() + matricula.getNota2()) / 2.0;
@@ -77,6 +81,4 @@ public class MatriculaAlunoService {
             matricula.setStatus(status);
         }
     }
-
-
 }

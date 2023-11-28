@@ -39,6 +39,4 @@ public class ProfessorController {
     public void delete(@PathVariable Long id){
         service.delete(id);
     }
-
-
 }
