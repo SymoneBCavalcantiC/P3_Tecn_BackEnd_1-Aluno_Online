@@ -1,7 +1,6 @@
 package com.alunoonline.api.controller;
 
 import com.alunoonline.api.dtos.PatchNotasRequest;
-import com.alunoonline.api.model.Aluno;
 import com.alunoonline.api.model.MatriculaAluno;
 import com.alunoonline.api.service.MatriculaAlunoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +20,6 @@ public class MatriculaAlunoController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody MatriculaAluno matriculaAluno){
-
         service.create(matriculaAluno);
     }
 
