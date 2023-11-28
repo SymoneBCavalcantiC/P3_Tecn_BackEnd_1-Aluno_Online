@@ -43,9 +43,4 @@ public class DisciplinaController {
         service.delete(id);
     }
 
-    @PatchMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    public void updateDisciplina(@PathVariable Long id, @RequestBody Disciplina disciplina, @RequestBody Professor professor) {
-        service.update(id, disciplina, professor);
-    }
 }

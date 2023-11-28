@@ -31,16 +31,4 @@ public class DisciplinaService {
         repository.deleteById(id);
     }
 
-    public Disciplina update(Long id, Disciplina disciplinaUpdated, Professor professorUpdated) {
-        Disciplina disciplinaCadastrada = repository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Disciplina não encontrada com id: " + id));
-
-        if (disciplinaUpdated.getNome() != null) {
-            disciplinaCadastrada.setNome(disciplinaUpdated.getNome());
-        }
-        if (disciplinaUpdated.getProfessor() != null) {
-            disciplinaCadastrada.setProfessor(disciplinaUpdated.getProfessor());
-        }
-        return repository.save(disciplinaCadastrada);
-    }
 }
