@@ -18,9 +18,9 @@ public class AlunoService {
 
     @Autowired //informa ao spring a injeção da dependência repository em service
     AlunoRepository repository;
+
     public Aluno create(Aluno aluno){
         return repository.save(aluno); //retorna o aluno criado
-
     }
     public List<Aluno> findAll(){
         return repository.findAll();
@@ -50,4 +50,5 @@ public class AlunoService {
 
         return repository.save(alunoCadastrado);
     }
+
 }

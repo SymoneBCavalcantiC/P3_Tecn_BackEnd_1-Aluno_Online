@@ -2,6 +2,7 @@ package com.alunoonline.api.controller;
 
 import com.alunoonline.api.model.Aluno;
 import com.alunoonline.api.model.Disciplina;
+import com.alunoonline.api.model.Professor;
 import com.alunoonline.api.service.DisciplinaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,5 +41,11 @@ public class DisciplinaController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id){
         service.delete(id);
+    }
+
+    @PatchMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateDisciplina(@PathVariable Long id, @RequestBody Disciplina disciplina, @RequestBody Professor professor) {
+        service.update(id, disciplina, professor);
     }
 }

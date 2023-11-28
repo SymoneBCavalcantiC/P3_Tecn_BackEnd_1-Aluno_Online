@@ -39,4 +39,11 @@ public class ProfessorController {
     public void delete(@PathVariable Long id){
         service.delete(id);
     }
+
+    @PatchMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateProfessor(@PathVariable Long id, @RequestBody Professor professor) {
+        service.update(id, professor);
+    }
+
 }

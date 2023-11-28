@@ -47,7 +47,6 @@ public class AlunoController {
     @ResponseStatus(HttpStatus.OK)
     public void updateAluno(@PathVariable Long id, @RequestBody Aluno aluno) {
         service.update(id, aluno);
-
     }
 
 
