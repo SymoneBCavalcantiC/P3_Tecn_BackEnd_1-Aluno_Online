@@ -1,6 +1,9 @@
 package com.alunoonline.api.service;
 
+import com.alunoonline.api.dtos.PatchNotasRequest;
 import com.alunoonline.api.model.Aluno;
+import com.alunoonline.api.model.Enum.StatusMatricula;
+import com.alunoonline.api.model.MatriculaAluno;
 import com.alunoonline.api.model.Professor;
 import com.alunoonline.api.repository.ProfessorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +33,7 @@ public class ProfessorService {
     public void delete(Long id){
         repository.deleteById(id);
     }
+
+
 
 }
