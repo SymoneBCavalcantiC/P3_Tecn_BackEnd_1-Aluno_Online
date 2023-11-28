@@ -22,7 +22,6 @@ public class AlunoController {
     @ResponseStatus(HttpStatus.CREATED) //código HTTP de retorno da requisição
     public ResponseEntity<Aluno> create(@RequestBody Aluno aluno){
         Aluno alunoCreated = service.create(aluno);
-
         return ResponseEntity.status(201).body(alunoCreated);
     }
 
@@ -42,6 +41,13 @@ public class AlunoController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id){
         service.delete(id);
+    }
+
+    @PatchMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateAluno(@PathVariable Long id, @RequestBody Aluno aluno) {
+        service.update(id, aluno);
+
     }
 
 

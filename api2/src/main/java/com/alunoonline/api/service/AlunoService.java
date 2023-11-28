@@ -5,6 +5,8 @@ por outras partes.
  */
 
 import com.alunoonline.api.model.Aluno;
+import com.alunoonline.api.model.Enum.StatusMatricula;
+import com.alunoonline.api.model.MatriculaAluno;
 import com.alunoonline.api.repository.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,4 +34,20 @@ public class AlunoService {
         repository.deleteById(id);
     }
 
+    public Aluno update(Long id, Aluno alunoUpdated) {
+        Aluno alunoCadastrado = repository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Aluno não encontrado com id: " + id));
+
+        if (alunoUpdated.getNome() != null) {
+            alunoCadastrado.setNome(alunoUpdated.getNome());
+        }
+        if (alunoUpdated.getEmail() != null) {
+            alunoCadastrado.setEmail(alunoUpdated.getEmail());
+        }
+        if (alunoUpdated.getCurso() != null) {
+            alunoCadastrado.setCurso(alunoUpdated.getCurso());
+        }
+
+        return repository.save(alunoCadastrado);
+    }
 }

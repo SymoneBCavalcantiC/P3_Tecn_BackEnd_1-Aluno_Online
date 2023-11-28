@@ -81,4 +81,5 @@ public class MatriculaAlunoService {
             matricula.setStatus(status);
         }
     }
+
 }
